@@ -1,6 +1,6 @@
 # Cardea Weather MCP Server
 
-The Cardea Weather MCP Server is a component of the Cardea project that provides weather data from [OpenWeatherMap.org](https://openweathermap.org/) to MCP clients. It supports two transport types: `stream-http` and `sse`.
+The Cardea Weather MCP Server provides weather data from [OpenWeatherMap.org](https://openweathermap.org/) to MCP clients. It supports two transport types: `stream-http` and `sse`.
 
 ## Tools
 
