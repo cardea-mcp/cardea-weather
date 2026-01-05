@@ -191,7 +191,10 @@ fn format_weather_info(weather: &WeatherResponse) -> String {
         weather.main.humidity,
         weather.wind.speed,
         weather.wind.deg,
-        weather.wind.gust.map_or(String::new(), |g| format!(", Gust {} m/s", g)),
+        weather
+            .wind
+            .gust
+            .map_or(String::new(), |g| format!(", Gust {} m/s", g)),
         weather.clouds.all,
         weather.visibility,
         weather.dt,
