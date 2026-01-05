@@ -170,7 +170,7 @@ fn format_weather_info(weather: &WeatherResponse) -> String {
          Weather Condition: {}.\n\
          Temperature: {}°C (Feels like: {}°C, Min: {}°C, Max: {}°C).\n\
          Atmosphere: Pressure {} hPa (Sea Level: {} hPa, Ground Level: {} hPa), Humidity {}%.\n\
-         Wind: Speed {} m/s, Direction {}°, Gust {} m/s.\n\
+         Wind: Speed {} m/s, Direction {}°{}.\n\
          Clouds: Cloudiness {}%.\n\
          Visibility: {} meters.\n\
          Other: Data Calculation Time (Unix UTC): {}, Sunrise: {}, Sunset: {}.\n\
@@ -191,7 +191,7 @@ fn format_weather_info(weather: &WeatherResponse) -> String {
         weather.main.humidity,
         weather.wind.speed,
         weather.wind.deg,
-        weather.wind.gust,
+        weather.wind.gust.map_or(String::new(), |g| format!(", Gust {} m/s", g)),
         weather.clouds.all,
         weather.visibility,
         weather.dt,

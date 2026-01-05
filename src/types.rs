@@ -120,7 +120,7 @@ pub(crate) struct Wind {
     /// Wind direction in degrees (meteorological).
     pub(crate) deg: u32,
     /// Wind gust in meter/sec.
-    pub(crate) gust: f64,
+    pub(crate) gust: Option<f64>,
 }
 
 /// Rain precipitation information.
